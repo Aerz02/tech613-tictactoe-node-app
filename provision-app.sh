@@ -21,6 +21,7 @@ echo "==> Starting deployment for $APP_NAME..."
 sudo apt-get update -y
 sudo apt-get install -y curl unzip git nginx
 
+
 # ==========================================
 # 2. INSTALL NODE.JS 20 & PM2
 # ==========================================
@@ -62,7 +63,8 @@ pm2 save
 # ==========================================
 # 5. CONFIGURE NGINX REVERSE PROXY
 # ==========================================
-echo "==> Configuring Nginx..."
+echo "==> Configuring Nginx Reverse proxy"
+sudo apt install sed
 sudo sed -i 's|try_files \$uri \$uri/ =404;|proxy_pass http://localhost:3000;|' /etc/nginx/sites-available/default
 grep proxy_pass /etc/nginx/sites-available/default
 sudo nginx -t
