@@ -12,7 +12,7 @@ REPO_DIR="tech613-tictactoe-node-app"
 ZIP_FILE="/home/ubuntu/$REPO_DIR/nodejs20-sparta-tictactoe-v1.zip"
 APP_DIR="/home/ubuntu/$REPO_DIR/app"
 
-echo "==> Starting bare-bones deployment for $APP_NAME..."
+echo "==> Starting deployment for $APP_NAME..."
 
 # ==========================================
 # 1. INSTALL ESSENTIAL SYSTEM PACKAGES
@@ -68,4 +68,4 @@ grep proxy_pass /etc/nginx/sites-available/default
 sudo nginx -t
 sudo systemctl restart nginx
 
-echo "==> Deployment complete!"
+echo "==> deployment complete!"
