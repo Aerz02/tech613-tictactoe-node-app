@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Exit immediately if any command fails
-set -e
-
 # ==========================================
 # CONFIGURATION
 # ==========================================
@@ -68,6 +65,5 @@ sudo systemctl restart nginx
 echo "==> Starting application with PM2..."
 pm2 delete "$APP_NAME" || true
 pm2 start index.js --name "$APP_NAME"
-pm2 save
 
 echo "==> deployment complete!"
